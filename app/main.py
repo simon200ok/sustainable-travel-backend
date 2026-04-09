@@ -27,8 +27,18 @@ app.add_middleware(
 
 # Auto-create tables on startup.
 # For production, replace with Alembic migrations: `alembic upgrade head`
-Base.metadata.create_all(bind=engine)
+#Disabled for now
+# Base.metadata.create_all(bind=engine)
 
+@app.on_event("startup")
+def startup_event() -> None:
+    try:
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database tables verified/created successfully.")
+    except Exception:
+        logger.exception("Database startup failed.")
+        raise
+    
 app.include_router(auth.router)
 app.include_router(locations.router)
 app.include_router(operators.router)
