@@ -27,31 +27,31 @@ def seed() -> None:
         # ── Zones ────────────────────────────────────────────────────────────
         zone_a = Zone(
             name="Zone A",
-            color="#0069FA",
+            color="#E53935",# original: #0069FA
             description="Newcastle City Centre and surrounding areas",
-            areas=["Newcastle Central", "Monument", "Eldon Square", "Gateshead"],
-            metro_stations=["Newcastle", "Monument", "Central Station", "St James", "Gateshead"],
+            areas=["Newcastle City Centre", "Gateshead Centre", "Jesmond", "Byker", "Manors", "St James NUFC Stadium"],
+            metro_stations=["Central Station", "Monument", "Haymarket", "St James", "Manors", "Gateshead", "Gateshead Stadium"],
         )
         zone_b = Zone(
             name="Zone B",
-            color="#F57C00",
-            description="Sunderland and surrounding areas — home of the University of Sunderland",
-            areas=["Sunderland City Centre", "St Peter's", "Stadium of Light", "Pallion"],
-            metro_stations=["Sunderland", "St Peter's", "Stadium of Light", "Park Lane"],
+            color="#1976D2",# original: #4CAF50
+            description="North Tyneside — coastal towns and residential suburbs",
+            areas=["North of the Tyne", "North of Tyne", "East of the City", "South towards Sunderland"],
+            metro_stations=["Heworth", "Fellgate", "Brockley Whins", "East Boldon", "Regent Centre", "Whitley Bay", "Tynemouth", "North Shields", "Wallsend", "Cullercoats"],
         )
         zone_c = Zone(
             name="Zone C",
-            color="#4CAF50",
-            description="North Tyneside — coastal towns and residential suburbs",
-            areas=["Whitley Bay", "Tynemouth", "North Shields", "Wallsend"],
-            metro_stations=["Whitley Bay", "Tynemouth", "North Shields", "Wallsend", "Cullercoats"],
+            color="#F57C00",
+            description="Sunderland and surrounding areas — home of the University of Sunderland",
+            areas=["Sunderland City Centre", "The Coast (North & South)", "North Tyneside", "South Tyneside", "Newcastle Airport"],
+            metro_stations=["Sunderland", "St Peter's", "Stadium of Light", "Park Lane", "Millfield", "South Hylton", "Monkseaton", "South Shields", "Airport"],
         )
         zone_d = Zone(
             name="Zone D",
-            color="#9C27B0",
-            description="Airport and western corridor",
-            areas=["Newcastle Airport", "Callerton", "Kingston Park", "Regent Centre"],
-            metro_stations=["Airport", "Callerton Parkway", "Kingston Park", "Regent Centre"],
+            color="#7B1FA2",# original: #9C27B0
+            description="Northern Terminus and Southeast Northumberland",
+            areas=["Northumberland Park", "Ashington", "Bedlington", "Blyth", "Seaton Delaval"],
+            metro_stations=["Ashington", "Bedlington", "Blyth Bebside", "Newsham"],
         )
         db.add_all([zone_a, zone_b, zone_c, zone_d])
         db.flush()
