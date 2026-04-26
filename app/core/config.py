@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     database_url: str | None = None
     
     # secret key (for development only)
-    secret_key: str = "changeme"
+    secret_key: str = "changeme" #generate any secure key for production
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     # Comma-separated list of allowed origins (e.g. "http://localhost:5173,https://example.com")
