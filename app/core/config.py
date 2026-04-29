@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     # Comma-separated list of allowed origins (e.g. "http://localhost:5173,https://example.com")
+    
+    # Uncomment for development, comment out for production
+    # allowed_origins: str = "http://localhost:5173"
+
     allowed_origins: str = "https://uos-sustainable-travel.vercel.app"
 
     # New database url property
